@@ -2,13 +2,20 @@ var boilerplate = angular.module('boilerplate', ['ui.router', 'ngAnimate', 'ngSa
 
 boilerplate.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
   $locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
-    .state('home', {
+    .state('app', {
+      abstract: true,
       url: '/',
+      template: '<div ui-view></div>',
+      controller: 'initCtrl'
+    })
+
+    .state('app.home', {
+      url: 'home',
       templateUrl: 'views/index.html',
-      controller: 'testCtrl'
+      controller: 'homeCtrl'
     })
 });
 

@@ -1,4 +1,4 @@
-boilerplate.controller('testCtrl',
+boilerplate.controller('homeCtrl',
   ['$scope',
   function($scope) {
     $scope.init = function() {

@@ -2,9 +2,14 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var app = express();
+var db = require('./db.js');
 var api = require('./routes/api.js');
 
 var bodyParser = require('body-parser');
+
+// connect database, setup options in db.js
+// mongoose.Promise = global.Promise;
+// var promise = mongoose.connect(db.url, db.options);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
